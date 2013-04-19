@@ -12,7 +12,7 @@ function! AbuseTheForceRetrieve()
     let filePath = expand("%")
 
     "let command = "!echo \"" . filePath . "\""
-    let command = "!abusetheforce deploy file \"" . filePath . "\""
+    let command = "!abusetheforce retrieve file \"" . filePath . "\""
     execute command
 
 endfunction
