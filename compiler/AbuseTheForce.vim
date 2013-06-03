@@ -18,4 +18,5 @@ endif
 "            \%tarning%*[^:]:\ %m
 
 "set efm=%A\ %#[javac]\ %f:%l:\ %m,%-Z\ %#[javac]\ %p^,%-C%.%#
-CompilerSet makeprg="abusetheforce deploy file " . %:p
+set efm=%f:%l:%c\ %t\ in\ %m
+CompilerSet makeprg=abusetheforce\ deploy\ file\ %

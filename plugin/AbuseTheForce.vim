@@ -8,6 +8,15 @@ function! AbuseTheForceDeploy()
 
 endfunction
 
+function! AbuseTheForceDeployTest()
+    let filePath = expand("%")
+
+    "let command = "!echo \"" . filePath . "\""
+    let command = "!abusetheforce deploy test \"" . filePath . "\""
+    execute command
+
+endfunction
+
 function! AbuseTheForceRetrieve()
     let filePath = expand("%")
 
@@ -20,9 +29,15 @@ endfunction
 function! AbuseTheForceTarget(...)
 
     if a:0 > 0
-        let target = a:1
 
-        let command = "!abusetheforce target activate \"" . target . "\""
+        if a:1 == "?"
+            let command = "!abusetheforce target list"
+        else
+            let target = a:1
+
+            let command = "!abusetheforce target activate \"" . target . "\""
+        end
+
         execute command
     else
         let command = "!abusetheforce target"
@@ -32,6 +47,7 @@ function! AbuseTheForceTarget(...)
 endfunction
 
 command -nargs=0 ForceDeploy call AbuseTheForceDeploy()         " Deploy current file
+command -nargs=0 ForceDeployTest call AbuseTheForceDeployTest() " Deploy current file and run test
 command -nargs=0 ForceRetrieve call AbuseTheForceRetrieve()     " Retrieve current file
 command -nargs=? ForceTarget call AbuseTheForceTarget(<f-args>) " Change deploy target
 
