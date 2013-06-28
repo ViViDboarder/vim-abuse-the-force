@@ -4,4 +4,5 @@ Plugin for "compiling" Salesforce.com code with [Abuse the Force](http://github.
 
 Installation
 ------------
-Soon
+* Install [Abuse the Force](http://github.com/ViViDboarder/abuse-the-force)
+* Use Vundle or something similar
