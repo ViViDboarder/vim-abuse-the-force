@@ -46,10 +46,10 @@ function! AbuseTheForceTarget(...)
 
 endfunction
 
-command -nargs=0 ForceDeploy call AbuseTheForceDeploy()         " Deploy current file
-command -nargs=0 ForceDeployTest call AbuseTheForceDeployTest() " Deploy current file and run test
-command -nargs=0 ForceRetrieve call AbuseTheForceRetrieve()     " Retrieve current file
-command -nargs=? ForceTarget call AbuseTheForceTarget(<f-args>) " Change deploy target
+command! -nargs=0 ForceDeploy call AbuseTheForceDeploy()         " Deploy current file
+command! -nargs=0 ForceDeployTest call AbuseTheForceDeployTest() " Deploy current file and run test
+command! -nargs=0 ForceRetrieve call AbuseTheForceRetrieve()     " Retrieve current file
+command! -nargs=? ForceTarget call AbuseTheForceTarget(<f-args>) " Change deploy target
 
 " Set SF Compiler
 autocmd BufNewFile,BufRead *.cls,*.trigger,*.page,*.component compiler AbuseTheForce
