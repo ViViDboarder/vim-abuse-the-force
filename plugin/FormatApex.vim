@@ -1,4 +1,4 @@
-function FormatApex()
+function! FormatApex()
 	" Mark current location
 	normal mz
 	
